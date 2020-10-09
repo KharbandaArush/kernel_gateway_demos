@@ -1,8 +1,8 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
-FROM python:3.5.1-alpine
+FROM python:latest
 
 WORKDIR /src
-RUN pip install tornado
+RUN pip install --no-cache-dir tornado
 COPY src/* /src/
 ENTRYPOINT ["python", "/src/client.py"]
